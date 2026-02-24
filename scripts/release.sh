@@ -79,11 +79,11 @@ else
 fi
 echo ""
 
-# --- Update plugin.json versions (add sed commands here as plugins are added) ---
-# Example (uncomment when a plugin exists):
-#   PLUGIN_JSON="my-plugin/.claude-plugin/plugin.json"
-#   echo "Updating ${PLUGIN_JSON}..."
-#   sed -i "s/\"version\": \"${CURRENT_VERSION}\"/\"version\": \"${NEW_VERSION}\"/" "$PLUGIN_JSON"
+# --- Update plugin.json versions ---
+
+PLUGIN_JSON="estonian-groceries/.claude-plugin/plugin.json"
+echo "Updating ${PLUGIN_JSON}..."
+sed -i "s/\"version\": \"${CURRENT_VERSION}\"/\"version\": \"${NEW_VERSION}\"/" "$PLUGIN_JSON"
 
 # --- Update CHANGELOG.md ---
 
@@ -126,9 +126,7 @@ fi
 
 echo ""
 echo "Creating commit and tag..."
-git add CHANGELOG.md
-# Add plugin.json files here as plugins are added:
-#   git add my-plugin/.claude-plugin/plugin.json
+git add CHANGELOG.md estonian-groceries/.claude-plugin/plugin.json
 git commit -m "Release ${NEW_VERSION}"
 git tag "v${NEW_VERSION}"
 
