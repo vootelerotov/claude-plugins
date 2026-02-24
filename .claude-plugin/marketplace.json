@@ -3,5 +3,11 @@
   "owner": {
     "name": "vootelerotov"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "estonian-groceries",
+      "description": "Shop for groceries from Estonian stores (Selver) via Claude Code",
+      "directory": "estonian-groceries"
+    }
+  ]
 }

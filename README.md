@@ -6,7 +6,7 @@ A personal agent plugin marketplace for Claude Code.
 
 | Plugin | Description |
 |--------|-------------|
-| *(none yet)* | |
+| [estonian-groceries](./estonian-groceries) | Shop for groceries from Estonian stores (Selver) via Claude Code |
 
 ## Setup
 
