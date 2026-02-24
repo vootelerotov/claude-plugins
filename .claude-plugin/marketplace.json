@@ -1,13 +1,13 @@
 {
-  "name": "claude-plugins-marketplace",
+  "name": "vootelerotov-plugins-marketplace",
   "owner": {
     "name": "vootelerotov"
   },
   "plugins": [
     {
       "name": "estonian-groceries",
-      "description": "Shop for groceries from Estonian stores (Selver) via Claude Code",
-      "directory": "estonian-groceries"
+      "source": "./estonian-groceries",
+      "description": "Shop for groceries from Estonian stores (Selver) via Claude Code"
     }
   ]
 }
