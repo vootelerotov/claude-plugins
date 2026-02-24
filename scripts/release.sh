@@ -63,14 +63,10 @@ if git rev-parse "v${NEW_VERSION}" >/dev/null 2>&1; then
     exit 1
 fi
 
-# --- Determine current version (from latest git tag, or none) ---
+# --- Determine current version from plugin.json ---
 
-LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
-CURRENT_VERSION="${LATEST_TAG#v}"
-
-if [ -z "$CURRENT_VERSION" ]; then
-    CURRENT_VERSION="(none)"
-fi
+PLUGIN_JSON="estonian-groceries/.claude-plugin/plugin.json"
+CURRENT_VERSION=$(grep '"version"' "$PLUGIN_JSON" | sed 's/.*"version": *"\([^"]*\)".*/\1/')
 
 if [ "$DRY_RUN" = true ]; then
     echo -e "${YELLOW}[DRY RUN] Releasing version ${NEW_VERSION} (current: ${CURRENT_VERSION})${NC}"
@@ -81,7 +77,6 @@ echo ""
 
 # --- Update plugin.json versions ---
 
-PLUGIN_JSON="estonian-groceries/.claude-plugin/plugin.json"
 echo "Updating ${PLUGIN_JSON}..."
 sed -i "s/\"version\": \"${CURRENT_VERSION}\"/\"version\": \"${NEW_VERSION}\"/" "$PLUGIN_JSON"
 
