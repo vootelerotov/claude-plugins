@@ -1,8 +1,6 @@
 ---
 name: selver
-description: >
-  Use when the user wants to shop for groceries at Selver, build a Selver shopping cart,
-  search for products on Selver.ee, or create a shareable Selver cart link.
+description: Use when the user wants to shop for groceries at Selver, build a Selver shopping cart, search for products on Selver.ee, or create a shareable Selver cart link.
 allowed-tools: Bash(*selver-search.sh*), Bash(*selver-create-cart.sh*), Bash(*selver-add-items.sh*), Bash(*selver-share-cart.sh*)
 ---
 
