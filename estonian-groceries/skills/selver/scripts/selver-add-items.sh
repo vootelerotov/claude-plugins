@@ -27,4 +27,8 @@ body="{\"cartId\":\"${cart_id}\",\"cartItems\":${items_json}}"
 
 curl -s -X POST "https://www.selver.ee/api/ext/tkg-sales/cart/add-cart-items?cartId=${cart_id}&storeCode=et" \
   -H "Content-Type: application/json" \
+  -H "Accept: */*" \
+  -H "Origin: https://www.selver.ee" \
+  -H "Referer: https://www.selver.ee/" \
+  -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36" \
   -d "$body"
